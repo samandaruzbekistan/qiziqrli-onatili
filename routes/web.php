@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DictController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\ThemeController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,10 @@ Route::prefix('admin')->group(callback: function () {
         Route::get('theme-question/{id}', [QuestionController::class, 'view_questions'])->name('theme.question.view');
         Route::post('add-question', [QuestionController::class, 'add_question'])->name('admin.question.add');
         Route::get('delete-question/{id}', [QuestionController::class, 'delete_question'])->name('admin.question.delete');
+
+        Route::get('show-theme-dicts/{theme_id}', [DictController::class, 'show_theme_dicts'])->name('admin.theme.dicts');
+        Route::get('delete-theme-dict/{dict_id}', [DictController::class, 'delete_dict'])->name('admin.delete.dict');
+        Route::post('add-dict', [DictController::class, 'new_dict'])->name('admin.add.dict');
 
         Route::post('add-section', [ThemeController::class, 'add_section'])->name('admin.add.section');
     });
