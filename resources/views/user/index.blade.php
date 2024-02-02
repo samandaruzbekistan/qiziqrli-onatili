@@ -102,13 +102,13 @@
                     <div class="owl-carousel active_course">
                         <div class="single_course">
                             <div class="course_head">
-                                <img class="img-fluid" src="img/courses/c1.jpg" alt="" />
+                                <img class="img-fluid" src="img/courses/1qisim.jpg" alt="" />
                             </div>
                             <div class="course_content">
                                 <span class="price">Tekin</span>
                                 <span class="tag mb-4 d-inline-block">2 - sinf</span>
                                 <h4 class="mb-3">
-                                    <a href="course-details.html">Ona tili 1-qism</a>
+                                    <a href="{{ route('user.section', ['id' => 1]) }}">Ona tili 1-qism</a>
                                 </h4>
                                 <p>
                                     2 - sinf ona tili fani 1 qismi bo'yicha qo'llanmalar va topshiqlar
@@ -136,7 +136,7 @@
                                 <span class="price">Tekin</span>
                                 <span class="tag mb-4 d-inline-block">2 - sinf</span>
                                 <h4 class="mb-3">
-                                    <a href="course-details.html">Ona tili 2-qism</a>
+                                    <a href="{{ route('user.section', ['id' => 2]) }}">Ona tili 2-qism</a>
                                 </h4>
                                 <p>
                                     2 - sinf ona tili fani 2 qismi bo'yicha qo'llanmalar va topshiqlar
@@ -158,13 +158,13 @@
                         </div>
                         <div class="single_course">
                             <div class="course_head">
-                                <img class="img-fluid" src="img/courses/c1.jpg" alt="" />
+                                <img class="img-fluid" src="img/courses/3qisim.jpg" alt="" />
                             </div>
                             <div class="course_content">
                                 <span class="price">Tekin</span>
                                 <span class="tag mb-4 d-inline-block">2 - sinf</span>
                                 <h4 class="mb-3">
-                                    <a href="course-details.html">Ona tili 3-qism</a>
+                                    <a href="{{ route('user.section', ['id' => 3]) }}">Ona tili 3-qism</a>
                                 </h4>
                                 <p>
                                     2 - sinf ona tili fani 3 qismi bo'yicha qo'llanmalar va topshiqlar
@@ -184,34 +184,34 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="single_course">
-                            <div class="course_head">
-                                <img class="img-fluid" src="img/courses/c1.jpg" alt="" />
-                            </div>
-                            <div class="course_content">
-                                <span class="price">Tekin</span>
-                                <span class="tag mb-4 d-inline-block">2 - sinf</span>
-                                <h4 class="mb-3">
-                                    <a href="course-details.html">Ona tili 4-qism</a>
-                                </h4>
-                                <p>
-                                    2 - sinf ona tili fani 4 qismi bo'yicha qo'llanmalar va topshiqlar
-                                </p>
-                                <div
-                                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
-                                >
-                                    <div class="authr_meta">
-                                        <img src="img/courses/author1.png" alt="" />
-                                        <span class="d-inline-block ml-2">Odina Qayumova</span>
-                                    </div>
-                                    <div class="mt-lg-0 mt-3">
-                                        <span class="meta_info"
-                                        ><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="single_course">--}}
+{{--                            <div class="course_head">--}}
+{{--                                <img class="img-fluid" src="img/courses/c1.jpg" alt="" />--}}
+{{--                            </div>--}}
+{{--                            <div class="course_content">--}}
+{{--                                <span class="price">Tekin</span>--}}
+{{--                                <span class="tag mb-4 d-inline-block">2 - sinf</span>--}}
+{{--                                <h4 class="mb-3">--}}
+{{--                                    <a href="{{ route('user.section', ['id' => 4]) }}">Ona tili 4-qism</a>--}}
+{{--                                </h4>--}}
+{{--                                <p>--}}
+{{--                                    2 - sinf ona tili fani 4 qismi bo'yicha qo'llanmalar va topshiqlar--}}
+{{--                                </p>--}}
+{{--                                <div--}}
+{{--                                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"--}}
+{{--                                >--}}
+{{--                                    <div class="authr_meta">--}}
+{{--                                        <img src="img/courses/author1.png" alt="" />--}}
+{{--                                        <span class="d-inline-block ml-2">Odina Qayumova</span>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="mt-lg-0 mt-3">--}}
+{{--                                        <span class="meta_info"--}}
+{{--                                        ><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span--}}
+{{--                                        >--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -296,7 +296,7 @@
     <!--================ End Registration Area =================-->
 
     <!--================ Start Trainers Area =================-->
-    <section class="trainer_area section_gap_top">
+    <section class="trainer_area section_gap_top" id="author">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
@@ -335,6 +335,120 @@
     </section>
     <!--================ End Trainers Area =================-->
 
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="banner_content text-center">
+                            <h2>Bo'g'lanish</h2>
+                            <div class="page_link">
+                                    <a href="/">Bosh sahifa</a>
+                                <a href="#contact">Bog'lanish</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Home Banner Area =================-->
 
+    <!--================Contact Area =================-->
+    <section class="contact_area section_gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="contact_info">
+                        <div class="info_item">
+                            <i class="ti-home"></i>
+                            <h6>Guliston shahar 4-mavze</h6>
+                            <p>Guliston davlat universiteti</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="ti-link"></i>
+                            <h6><a href="#">+998 93 328 02 11</a></h6>
+                            <p>Telefon raqam</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="ti-email"></i>
+                            <h6><a href="#">odinaqayumova@icloud.com</a></h6>
+                            <p>Email</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <form
+                        class="row contact_form"
+                        action="contact_process.php"
+                        method="post"
+                        id="contactForm"
+                        novalidate="novalidate"
+                    >
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Enter your name"
+                                    onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Ismingiz'"
+                                    required=""
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter email address"
+                                    onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Email'"
+                                    required=""
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="subject"
+                                    name="subject"
+                                    placeholder="Enter Subject"
+                                    onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Mavzu'"
+                                    required=""
+                                />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                  <textarea
+                      class="form-control"
+                      name="message"
+                      id="message"
+                      rows="1"
+                      placeholder="Enter Message"
+                      onfocus="this.placeholder = ''"
+                      onblur="this.placeholder = 'Xabarni kiriting'"
+                      required=""
+                  ></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-right">
+                            <button type="submit" value="submit" class="btn primary-btn">
+                                Xabar yuborish
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================Contact Area =================-->
 
 @endsection

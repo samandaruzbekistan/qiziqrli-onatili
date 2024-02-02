@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->id();
+            $table->text('html');
+            $table->unsignedBigInteger('theme_id');
+            $table->foreign('theme_id')->references('id')->on('themes');
             $table->timestamps();
         });
     }

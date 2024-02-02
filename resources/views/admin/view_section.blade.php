@@ -31,7 +31,7 @@
                                 <td>{{ $id+1 }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>
-                                    <a href="{{ route('admin.theme.quizzes', ['theme_id' => $item->id]) }}"
+                                    <a href="{{ route('theme.topic.view', ['theme_id' => $item->id]) }}"
                                        class="btn btn-primary ">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

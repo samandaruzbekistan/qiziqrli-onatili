@@ -8,16 +8,16 @@
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <link rel="icon" href="../img/favicon.png" type="image/png" />
     <title>Qiziqali ona tili</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/flaticon.css" />
-    <link rel="stylesheet" href="css/themify-icons.css" />
-    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css" />
-    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/flaticon.css" />
+    <link rel="stylesheet" href="../css/themify-icons.css" />
+    <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
     <!-- main css -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body>
@@ -46,8 +46,8 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="index.html"
-                ><img src="img/logo.png" alt=""
+                <a class="navbar-brand logo_h" href="/"
+                ><img src="../img/logo.png" alt=""
                     /></a>
                 <button
                     class="navbar-toggler"
@@ -73,53 +73,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('user.about') }}">About</a>
                         </li>
-                        <li class="nav-item submenu dropdown">
-                            <a
-                                href="#"
-                                class="nav-link dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                            >Pages</a
-                            >
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="courses.html">Courses</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="course-details.html"
-                                    >Course Details</a
-                                    >
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="elements.html">Elements</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item submenu dropdown">
-                            <a
-                                href="#"
-                                class="nav-link dropdown-toggle"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                            >Blog</a
-                            >
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="blog.html">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="single-blog.html"
-                                    >Blog Details</a
-                                    >
-                                </li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#author">Muallif</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="#contact">Bog'lanish</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link search" id="search">
@@ -234,17 +192,17 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
-<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-<script src="js/owl-carousel-thumb.min.js"></script>
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<script src="js/mail-script.js"></script>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/popper.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="../vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="../js/owl-carousel-thumb.min.js"></script>
+<script src="../js/jquery.ajaxchimp.min.js"></script>
+<script src="../js/mail-script.js"></script>
 <!--gmaps Js-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-<script src="js/gmaps.min.js"></script>
-<script src="js/theme.js"></script>
+<script src="../js/gmaps.min.js"></script>
+<script src="../js/theme.js"></script>
 </body>
 </html>

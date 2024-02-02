@@ -6,6 +6,8 @@ use App\Http\Controllers\DictController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\TopicController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +23,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/','user.index')->name('user.index');
 Route::view('/about','user.about')->name('user.about');
-
+Route::get('/section/{id}', [UserController::class, 'view_section'])->name('user.section');
+Route::get('/theme/{theme_id}', [UserController::class, 'show_theme'])->name('user.theme');
 
 Route::prefix('admin')->group(callback: function () {
     Route::view('/', 'admin.login')->name("admin.login");
@@ -49,6 +52,11 @@ Route::prefix('admin')->group(callback: function () {
         Route::get('theme-audio/{theme_id}', [AudioController::class, 'view_audios'])->name('theme.audio.view');
         Route::post('add-audio', [AudioController::class, 'add_audio'])->name('admin.audio.add');
         Route::get('delete-audio/{id}', [AudioController::class, 'delete_audio'])->name('admin.audio.delete');
+
+        Route::get('theme-topic/{theme_id}', [TopicController::class, 'show_theme_topics'])->name('theme.topic.view');
+        Route::post('add-topic', [TopicController::class, 'new_topic'])->name('admin.topic.add');
+        Route::post('ck/upload', [TopicController::class, 'imgSave'])->name('imgupload');
+        Route::get('delete-topic/{id}', [TopicController::class, 'delete_topic'])->name('admin.topic.delete');
 
         Route::post('add-section', [ThemeController::class, 'add_section'])->name('admin.add.section');
     });
