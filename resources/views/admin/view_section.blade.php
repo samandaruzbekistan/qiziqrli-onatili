@@ -17,9 +17,11 @@
                         <tr>
                             <th>#</th>
                             <th>Nomi</th>
+                            <th>Maruza</th>
+                            <th>Audio</th>
                             <th>Testlar</th>
-                            <th>Topshiriqlar</th>
-                            <th>Tillar aro integratsiya</th>
+                            <th>Rebus</th>
+                            <th>Lug'at</th>
                             <th>O'chirish</th>
                         </tr>
                         </thead>
@@ -29,7 +31,34 @@
                                 <td>{{ $id+1 }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>
-                                    <a href="{{ route('theme.question.view', ['id' => $item->id]) }}"
+                                    <a href="{{ route('admin.theme.quizzes', ['theme_id' => $item->id]) }}"
+                                       class="btn btn-primary ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="feather feather-align-left align-middle ">
+                                            <line x1="17" y1="10" x2="3" y2="10"></line>
+                                            <line x1="21" y1="6" x2="3" y2="6"></line>
+                                            <line x1="21" y1="14" x2="3" y2="14"></line>
+                                            <line x1="17" y1="18" x2="3" y2="18"></line>
+                                        </svg>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ route('theme.audio.view', ['theme_id' => $item->id]) }}"
+                                       class="btn btn-success ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="feather feather-music align-middle">
+                                            <path d="M9 18V5l12-2v13"></path>
+                                            <circle cx="6" cy="18" r="3"></circle>
+                                            <circle cx="18" cy="16" r="3"></circle>
+                                        </svg>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ route('admin.theme.quizzes', ['theme_id' => $item->id]) }}"
                                        class="btn btn-warning text-dark">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AudioController;
 use App\Http\Controllers\DictController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ThemeController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +41,14 @@ Route::prefix('admin')->group(callback: function () {
         Route::get('show-theme-dicts/{theme_id}', [DictController::class, 'show_theme_dicts'])->name('admin.theme.dicts');
         Route::get('delete-theme-dict/{dict_id}', [DictController::class, 'delete_dict'])->name('admin.delete.dict');
         Route::post('add-dict', [DictController::class, 'new_dict'])->name('admin.add.dict');
+
+        Route::get('show-theme-quizzes/{theme_id}', [QuizController::class, 'show_quizzes'])->name('admin.theme.quizzes');
+        Route::get('delete-theme-quiz/{quiz_id}', [QuizController::class, 'delete_quiz'])->name('admin.delete.quiz');
+        Route::post('add-quiz', [QuizController::class, 'add_quiz'])->name('admin.add.quiz');
+
+        Route::get('theme-audio/{theme_id}', [AudioController::class, 'view_audios'])->name('theme.audio.view');
+        Route::post('add-audio', [AudioController::class, 'add_audio'])->name('admin.audio.add');
+        Route::get('delete-audio/{id}', [AudioController::class, 'delete_audio'])->name('admin.audio.delete');
 
         Route::post('add-section', [ThemeController::class, 'add_section'])->name('admin.add.section');
     });
