@@ -19,6 +19,11 @@ class Theme extends Model
         return $this->hasMany(Audio::class, 'theme_id');
     }
 
+    public function topics()
+    {
+        return $this->hasMany(Topic::class, 'theme_id');
+    }
+
     public function dicts()
     {
         return $this->hasMany(Dict::class, 'theme_id');

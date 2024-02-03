@@ -4,10 +4,8 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" href="../img/favicon.png" type="image/png" />
     <title>Qiziqali ona tili</title>
     <!-- Bootstrap CSS -->
@@ -18,6 +16,8 @@
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />
     <!-- main css -->
     <link rel="stylesheet" href="../css/style.css" />
+
+    @yield('css')
 </head>
 
 <body>
@@ -190,9 +190,12 @@
 </footer>
 <!--================ End footer Area  =================-->
 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+@yield('js')
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="../js/jquery-3.2.1.min.js"></script>
 <script src="../js/popper.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../vendors/nice-select/js/jquery.nice-select.min.js"></script>
@@ -201,6 +204,7 @@
 <script src="../js/jquery.ajaxchimp.min.js"></script>
 <script src="../js/mail-script.js"></script>
 <!--gmaps Js-->
+<script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="../js/gmaps.min.js"></script>
 <script src="../js/theme.js"></script>

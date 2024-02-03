@@ -6,6 +6,8 @@ use App\Models\Audio;
 use App\Models\Dict;
 use App\Models\Quiz;
 use App\Models\Theme;
+use App\Models\Topic;
+use App\Models\TopicPdf;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -20,6 +22,7 @@ class UserController extends Controller
 //        $test = Quiz::with('answers')->where('theme_id', $theme_id)->get();
         $audio = Audio::where('theme_id', $theme_id)->first();
         $dict = Dict::where('theme_id', $theme_id)->get();
-        return view('user.show_theme', ['theme' => $theme, 'audio' => $audio, 'dict' => $dict]);
+        $topicPdf = TopicPdf::where('theme_id', $theme_id)->first();
+        return view('user.show_theme', ['theme' => $theme, 'topic' => $topicPdf, 'audio' => $audio, 'dicts' => $dict]);
     }
 }

@@ -17,14 +17,18 @@
                         <tr>
                             <th>#</th>
                             <th>Maruza</th>
+                            <th>Yuklab olish</th>
                             <th>O'chirish</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($topics as $id => $item)
+                        @foreach($pdfs as $id => $item)
                             <tr>
                                 <td>{{ $id+1 }}</td>
-                                <td>{{ $item->html }}</td>
+                                <td>{{ $item->pdf }}</td>
+                                <td>
+                                    <a href="{{ asset('pdf') }}/{{ $item->pdf }}">Download</a>
+                                </td>
                                 <td>
                                     <a href="{{ route('admin.topic.delete', ['id' => $item->id]) }}"
                                        class="btn btn-danger text-white">
@@ -58,11 +62,11 @@
                             <h5 class="card-title mb-0">Yangi lug'at qo'shish</h5>
                         </div>
                         <div class="card-body h-100">
-                            <form action="{{ route('admin.topic.add') }}" method="post">
+                            <form action="{{ route('admin.topic.add') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    <label class="form-label">Maruza <span class="text-danger">*</span></label>
-                                    <textarea required name="editor"></textarea><br>
+                                    <label class="form-label">Pdf <span class="text-danger">*</span></label>
+                                    <input type="file" name="pdf" id="" class="form-control">
                                 </div>
                                 <input type="hidden" name="theme_id" value="{{ $theme->id }}">
                                 <div class=" text-end">
@@ -80,12 +84,7 @@
 
 
 @section('js')
-    <script src="https://cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace( 'editor', {
-            filebrowserUploadUrl:"{{ route('imgupload', ['_token'=> csrf_token()]) }}",
-            filebrowserUploadMethod: "form"
-        } );
 
         $(".add").on("click", function () {
             $('.forma').show();
@@ -119,7 +118,7 @@
         const notyf = new Notyf();
 
         notyf.success({
-            message: 'Lug\'at qo\'shildi',
+            message: 'PDF qo\'shildi',
             duration: 10000,
             dismissible: true,
             position: {
@@ -133,7 +132,7 @@
         const notyf = new Notyf();
 
         notyf.warning({
-            message: 'Lug\'at o\'chirildi!',
+            message: 'PDF o\'chirildi!',
             duration: 10000,
             dismissible: true,
             position: {

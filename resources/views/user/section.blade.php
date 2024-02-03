@@ -18,7 +18,7 @@
             <div class="row">
                 @foreach($themes as $theme)
                     <div class="col-lg-4 col-md-6">
-                        <a href="">
+                        <a href="{{ route('user.theme', ['theme_id' => $theme->id]) }}">
                             <div class="single_feature">
                                 <div class="icon"><span class="flaticon-book"></span></div>
                                 <div class="desc">
