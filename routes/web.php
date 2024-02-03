@@ -27,6 +27,7 @@ Route::view('/about','user.about')->name('user.about');
 Route::get('/section/{id}', [UserController::class, 'view_section'])->name('user.section');
 Route::get('/theme/{theme_id}', [UserController::class, 'show_theme'])->name('user.theme');
 Route::post('user-check',[UserController::class, 'rebus_check'])->name('user.rebus.check');
+Route::post('test-check',[UserController::class, 'check'])->name('user.test.check');
 
 Route::prefix('admin')->group(callback: function () {
     Route::view('/', 'admin.login')->name("admin.login");

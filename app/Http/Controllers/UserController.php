@@ -23,10 +23,10 @@ class UserController extends Controller
         $test = Quiz::with('answers')->where('theme_id', $theme_id)->get();
         $audio = Audio::where('theme_id', $theme_id)->first();
         $questions = Question::where('theme_id', $theme_id)->get();
-        return $test;
+//        return $test;
         $dict = Dict::where('theme_id', $theme_id)->get();
         $topicPdf = TopicPdf::where('theme_id', $theme_id)->first();
-        return view('user.show_theme', ['theme' => $theme,'quizzes' => $test,'questions' => $questions, 'topic' => $topicPdf, 'audio' => $audio, 'dicts' => $dict]);
+        return view('user.show_theme', ['audio' => $audio,'theme' => $theme,'quizzes' => $test,'questions' => $questions, 'topic' => $topicPdf, 'audio' => $audio, 'dicts' => $dict]);
     }
 
     public function rebus_check(Request $request){
@@ -37,5 +37,26 @@ class UserController extends Controller
         else{
             return back()->with('answer',0);
         }
+    }
+
+    public function check(Request $request){
+        $correct = 0;
+        $incorrect = 0;
+        $r = [];
+        for ($x = 1; $x <= $request->quiz_count; $x++) {
+            $index = 'answer'.$x;
+            if (isset($request->$index)){
+                if ($request[$index] == '1'){
+                    $correct = $correct+1;
+                }
+                else{
+                    $incorrect = $incorrect+1;
+                }
+            }
+        }
+        session()->flash('result',1);
+        session()->flash('correct',$correct);
+        session()->flash('incorrect',$incorrect);
+        return back();
     }
 }

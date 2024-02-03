@@ -11,6 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/flaticon.css" />
+    <link rel="stylesheet" href="../css/audio.css" />
     <link rel="stylesheet" href="../css/themify-icons.css" />
     <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css" />
     <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css" />

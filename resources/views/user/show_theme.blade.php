@@ -4,6 +4,7 @@
 
 
 @section('css')
+
     <style>
         .quiz-wrapper {
             position: relative;
@@ -121,6 +122,16 @@
                     <iframe src="{{ asset('pdf') }}/{{ $topic->pdf }}" width="100%" height="600px"></iframe>
                 </div>
                 <hr>
+                <div>
+                    <div class="col-12">
+                        <h2 class="text-center">Mavzu audiosini tinglar</h2>
+                        <div class="holder">
+                            <audio controls>
+                                <source src="{{ asset('audio') }}/{{ $audio->name }}" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-12 mt-5 text-center">
                     <h2>So'zlarni tarjimasini toping</h2>
                 </div>
@@ -150,7 +161,7 @@
                 </div>
             </div>
             <hr>
-            <h2 class="text-center">Rebuslarni tarjimasini toping</h2>
+            <h2 class="text-center d-block">Rebuslarni yeching</h2>
             <div class="container mt-3">
                 <div class="row justify-content-around">
                     @foreach($questions as $present)
@@ -178,9 +189,10 @@
                 </div>
             </div>
             <hr>
-            <form action="" method="post">
+            <h2 class="text-center">Testlarni yeching</h2>
+            <form action="{{ route('user.test.check') }}" method="post">
                 @csrf
-                <input type="hidden" name="quiz_count" value="{{ $block->quiz_count }}">
+                <input type="hidden" name="quiz_count" value="{{ count($quizzes) }}">
                 <div class="container">
                     @foreach($quizzes as $id=> $quiz)
                         <div class="small_tests">
@@ -286,6 +298,40 @@
                     <div class="modal-footer">
                         <button type="submit" class="btn text-white" data-bs-dismiss="modal"
                                 style="background-color: #7a6ad8 !important;">OK
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
+    @if(session('result') == 1)
+        <div class="modal fade" id="answerQuestion" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Test natijasi</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-check-square align-middle text-success">
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                        To'gri javob: {{ session('correct') }} ta <br><br>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-x align-middle text-danger">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Noto'gri javob: {{ session('incorrect') }} ta
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn text-white" data-bs-dismiss="modal"
+                                style="background-color: #7a6ad8 !important;">Tugatish
                         </button>
                     </div>
                 </div>
