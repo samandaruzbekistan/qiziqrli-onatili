@@ -49,6 +49,7 @@ class AdminController extends Controller
     }
 
     public function section($id){
+        session()->put('section','qism'.$id);
         $themes = Theme::where('section_id', $id)->get();
         return view('admin.view_section', ['themes' => $themes, 'section_id' => $id]);
     }

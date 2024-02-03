@@ -13,6 +13,7 @@ class ThemeController extends Controller
         ]);
         $theme = new Theme;
         $theme->name = $request->name;
+        $theme->subtitle = $request->subtitle;
         $theme->section_id = $request->section_id;
         $theme->save();
         return back()->with('success',1);

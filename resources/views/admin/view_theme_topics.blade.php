@@ -1,6 +1,6 @@
 @extends('admin.header_footer')
 
-
+@section(session('section')) active @endsection
 @section('section')
     <main class="content teachers">
         <div class="container-fluid p-0">

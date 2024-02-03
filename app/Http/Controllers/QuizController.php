@@ -15,7 +15,6 @@ class QuizController extends Controller
             'answer_a' => 'required|string',
             'answer_b' => 'required|string',
             'answer_c' => 'required|string',
-            'answer_d' => 'required|string',
             'theme_id' => 'required|numeric',
         ]);
 
@@ -29,7 +28,6 @@ class QuizController extends Controller
         $this->add_answer($request->answer_a, $saved_id, 1);
         $this->add_answer($request->answer_b, $saved_id, 0);
         $this->add_answer($request->answer_c, $saved_id, 0);
-        $this->add_answer($request->answer_d, $saved_id, 0);
 
         return back()->with('success', 1);
     }

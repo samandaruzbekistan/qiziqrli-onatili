@@ -1,6 +1,6 @@
 @extends('admin.header_footer')
 
-
+@section(session('section')) active @endsection
 @section('section')
     <main class="content teachers">
         <div class="container-fluid p-0">
@@ -18,7 +18,6 @@
                             <th>#</th>
                             <th>Savol</th>
                             <th>To'g'ri javob</th>
-                            <th>Noto'g'ri javob</th>
                             <th>Noto'g'ri javob</th>
                             <th>Noto'g'ri javob</th>
                             <th>O'chirish</th>
@@ -84,10 +83,6 @@
                                 <div class="mb-3">
                                     <label class="form-label">C javob (noto'g'ri javob) <span class="text-danger">*</span></label>
                                     <input name="answer_c" required type="text" class="form-control" placeholder="">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">D javob (noto'g'ri javob) <span class="text-danger">*</span></label>
-                                    <input name="answer_d" required type="text" class="form-control" placeholder="">
                                 </div>
                                 <input type="hidden" name="theme_id" value="{{ $theme->id }}">
                                 <div class=" text-end">
