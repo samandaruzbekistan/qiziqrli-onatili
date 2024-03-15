@@ -138,6 +138,10 @@
                                     <label class="form-label">Nomi <span class="text-danger">*</span></label>
                                     <input name="name" required type="text" class="form-control" placeholder="">
                                 </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Subtitle <span class="text-danger">*</span></label>
+                                    <input name="subtitle" required type="text" class="form-control" placeholder="">
+                                </div>
                                 <input type="hidden" name="section_id" value="{{ $section_id }}">
                                 <div class=" text-end">
                                     <button type="button" class="btn btn-danger cancel">Bekor qilish</button>

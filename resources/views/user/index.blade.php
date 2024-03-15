@@ -102,7 +102,9 @@
                     <div class="owl-carousel active_course">
                         <div class="single_course">
                             <div class="course_head">
-                                <img class="img-fluid" src="img/courses/1qisim.jpg" alt="" />
+                                <a href="{{ route('user.section', ['id' => 1]) }}">
+                                    <img class="img-fluid" src="img/courses/1qisim.jpg" alt="" />
+                                </a>
                             </div>
                             <div class="course_content">
                                 <span class="price">Tekin</span>
@@ -130,7 +132,9 @@
                         </div>
                         <div class="single_course">
                             <div class="course_head">
-                                <img class="img-fluid" src="img/courses/c1.jpg" alt="" />
+                                <a href="{{ route('user.section', ['id' => 2]) }}">
+                                    <img class="img-fluid" src="img/courses/c1.jpg" alt="" />
+                                </a>
                             </div>
                             <div class="course_content">
                                 <span class="price">Tekin</span>
@@ -158,7 +162,9 @@
                         </div>
                         <div class="single_course">
                             <div class="course_head">
+                                <a href="{{ route('user.section', ['id' => 3]) }}">
                                 <img class="img-fluid" src="img/courses/3qisim.jpg" alt="" />
+                                </a>
                             </div>
                             <div class="course_content">
                                 <span class="price">Tekin</span>
@@ -184,34 +190,34 @@
                                 </div>
                             </div>
                         </div>
-{{--                        <div class="single_course">--}}
-{{--                            <div class="course_head">--}}
-{{--                                <img class="img-fluid" src="img/courses/c1.jpg" alt="" />--}}
-{{--                            </div>--}}
-{{--                            <div class="course_content">--}}
-{{--                                <span class="price">Tekin</span>--}}
-{{--                                <span class="tag mb-4 d-inline-block">2 - sinf</span>--}}
-{{--                                <h4 class="mb-3">--}}
-{{--                                    <a href="{{ route('user.section', ['id' => 4]) }}">Ona tili 4-qism</a>--}}
-{{--                                </h4>--}}
-{{--                                <p>--}}
-{{--                                    2 - sinf ona tili fani 4 qismi bo'yicha qo'llanmalar va topshiqlar--}}
-{{--                                </p>--}}
-{{--                                <div--}}
-{{--                                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"--}}
-{{--                                >--}}
-{{--                                    <div class="authr_meta">--}}
-{{--                                        <img src="img/courses/author1.png" alt="" />--}}
-{{--                                        <span class="d-inline-block ml-2">Odina Qayumova</span>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="mt-lg-0 mt-3">--}}
-{{--                                        <span class="meta_info"--}}
-{{--                                        ><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span--}}
-{{--                                        >--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        <div class="single_course">
+                            <div class="course_head">
+                                <img class="img-fluid" src="img/courses/c1.jpg" alt="" />
+                            </div>
+                            <div class="course_content">
+                                <span class="price">Tekin</span>
+                                <span class="tag mb-4 d-inline-block">2 - sinf</span>
+                                <h4 class="mb-3">
+                                    <a href="{{ route('user.section', ['id' => 4]) }}">Ona tili 4-qism</a>
+                                </h4>
+                                <p>
+                                    2 - sinf ona tili fani 4 qismi bo'yicha qo'llanmalar va topshiqlar
+                                </p>
+                                <div
+                                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
+                                >
+                                    <div class="authr_meta">
+                                        <img src="img/courses/author1.png" alt="" />
+                                        <span class="d-inline-block ml-2">Odina Qayumova</span>
+                                    </div>
+                                    <div class="mt-lg-0 mt-3">
+                                        <span class="meta_info"
+                                        ><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -228,9 +234,7 @@
                         <div class="col-lg-12">
                             <h1 class="mb-3">Xabar qoldirish</h1>
                             <p>
-                                There is a moment in the life of any aspiring astronomer that
-                                it is time to buy that first telescope. It’s exciting to think
-                                about setting up your own viewing station.
+                                Sayt bo'yicha takliflar, fikrlar bo'lsa yoki hamkorlik qilmoqchi bo'lsangiz biz bilan bog'laning
                             </p>
                         </div>
                         <div class="col clockinner1 clockinner">
@@ -253,8 +257,8 @@
                 </div>
                 <div class="col-lg-4 offset-lg-1">
                     <div class="register_form">
-                        <h3>Courses for Free</h3>
-                        <p>It is high time for learning</p>
+                        <h3>Xabar qoldirish</h3>
+                        <p>Maydonlarni to'ldiring</p>
                         <form
                             class="form_area"
                             id="myForm"
@@ -336,7 +340,7 @@
     <!--================ End Trainers Area =================-->
 
     <!--================Home Banner Area =================-->
-    <section class="banner_area">
+    <section class="banner_area" id="contact">
         <div class="banner_inner d-flex align-items-center">
             <div class="overlay"></div>
             <div class="container">

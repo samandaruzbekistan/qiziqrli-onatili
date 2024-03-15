@@ -124,68 +124,13 @@
                 <hr>
                 <div>
                     <div class="col-12">
-                        <h2 class="text-center">Mavzu audiosini tinglar</h2>
+                        <h2 class="text-center">Mavzu audiosini tinglang</h2>
                         <div class="holder">
                             <audio controls>
                                 <source src="{{ asset('audio') }}/{{ $audio->name }}" type="audio/mpeg">
                             </audio>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 mt-5 text-center">
-                    <h2>So'zlarni tarjimasini toping</h2>
-                </div>
-                <div class="col-6 quiz-wrapper">
-                    <ul class="options">
-                        @foreach($dicts as $dict)
-                            <li class="option text-dark" data-target="answer{{ $dict->id }}">{{ $dict->uzbek }}</li>
-                        @endforeach
-                    </ul>
-                    <table class="table answers table-bordered">
-                        <thead>
-                        <tr>
-                            <th >English</th>
-                            <th >O'zbekcha</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($dicts->shuffle() as $dict)
-                                <tr>
-                                    <td>{{ $dict->english }}</td>
-                                    <td><span class="target" data-accept="answer{{ $dict->id }}">&nbsp;</span></td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    <button type="submit" value="submit" class="btn btn-primary">Tekshirish</button>
-                </div>
-            </div>
-            <hr>
-            <h2 class="text-center d-block">Rebuslarni yeching</h2>
-            <div class="container mt-3">
-                <div class="row justify-content-around">
-                    @foreach($questions as $present)
-                        <div class="col-lg-5 col-md-5 mb-30 col-md-6 pr single_feature p-3">
-                            <div class="events_item">
-                                <h4>{{ $present->question }}</h4>
-                                <div class=" ">
-                                    <img src="../img/question/{{ $present->photo }}" class="img-thumbnail" alt="">
-                                </div>
-                                <div class="">
-                                    <form action="{{ route('user.rebus.check') }}" method="post">
-                                        @csrf
-                                        <input type="text" class="form-control mb-2 mt-2" name="answer" placeholder="Javobgiz..."
-                                               required>
-                                        <input type="hidden" name="rebus_id" value="{{ $present->id }}">
-                                        <button style="background-color: #7a6ad8 !important;" class="btn text-white"
-                                                type="submit">Tekshirish
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-
-                        </div>
-                    @endforeach
                 </div>
             </div>
             <hr>
@@ -216,6 +161,63 @@
                     </button>
                 </div>
             </form>
+            <hr>
+            <h2 class="text-center d-block">Rebuslarni yeching</h2>
+            <div class="container mt-3">
+                <div class="row justify-content-around">
+                    @foreach($questions as $present)
+                        <div class="col-lg-5 col-md-5 mb-30 col-md-6 pr single_feature p-3">
+                            <div class="events_item">
+                                <h4>{{ $present->question }}</h4>
+                                <div class=" ">
+                                    <img src="../img/question/{{ $present->photo }}" class="img-thumbnail" alt="">
+                                </div>
+                                <div class="">
+                                    <form action="{{ route('user.rebus.check') }}" method="post">
+                                        @csrf
+                                        <input type="text" class="form-control mb-2 mt-2" name="answer" placeholder="Javobgiz..."
+                                               required>
+                                        <input type="hidden" name="rebus_id" value="{{ $present->id }}">
+                                        <button style="background-color: #7a6ad8 !important;" class="btn text-white"
+                                                type="submit">Tekshirish
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            <hr>
+            <div class="col-12 mt-5 text-center">
+                <h2>Tillararo integratsiya</h2>
+            </div>
+            <div class="col-3"> </div>
+            <div class="col-6 quiz-wrapper justify-content-center">
+                <ul class="options">
+                    @foreach($dicts as $dict)
+                        <li class="option text-dark" data-target="answer{{ $dict->id }}">{{ $dict->uzbek }}</li>
+                    @endforeach
+                </ul>
+                <table class="table answers table-bordered">
+                    <thead>
+                    <tr>
+                        <th >English</th>
+                        <th >O'zbekcha</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($dicts->shuffle() as $dict)
+                        <tr>
+                            <td>{{ $dict->english }}</td>
+                            <td><span class="target" data-accept="answer{{ $dict->id }}">&nbsp;</span></td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+                <button type="submit" value="submit" class="btn btn-primary">Tekshirish</button>
+            </div>
         </div>
     </section>
     <!--================ End Feature Area =================-->
